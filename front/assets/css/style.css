@@ -30,6 +30,15 @@ body {
     background-color: #eee; /* Cor de fundo alterada */
 }
 
+/* Estilo para os radio buttons */
+.form-check-input[type="radio"] {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%; /* Torna os radio buttons redondos */
+    margin-top: 10px;
+}
+
+
 /* X-Small devices (portrait phones, less than 576px)
 No media query for `xs` since this is the default in Bootstrap */
 
