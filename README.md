@@ -21,6 +21,12 @@ Para executar o Sistema de Suitability localmente, siga estas etapas:
 3. Instale as dependências: `npm install`
 4. Inicie o servidor de desenvolvimento: `npm start`
 
+# Json Server
+
+1. Para executar, instale os pacotes com: `npm install`
+2. Inicie o servidor com: `npm start`
+3. Acesse o servidor em: `http://127.0.0.1:3001/questions`
+
 ## Uso
 
 1. Abra seu navegador da web e acesse `http://localhost:3000` para utilizar o sistema.

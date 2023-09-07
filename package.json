@@ -1,0 +1,25 @@
+{
+  "name": "suitability-system",
+  "version": "1.0.0",
+  "description": "O Sistema de Suitability foi desenvolvido para ser executado tanto no site do cliente quanto no aplicativo. Ele oferece um conjunto de perguntas e respostas que, ao serem concluídas, determinam o perfil de investimento do cliente.",
+  "main": "index.js",
+  "scripts": {
+    "start": "json-server ./database/questions.json --port 3001"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yanbrasiliano/suitability-system.git"
+  },
+  "author": "Pedro Ivo Araujo e Yan Brasiliano Silva Penalva",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yanbrasiliano/suitability-system/issues"
+  },
+  "homepage": "https://github.com/yanbrasiliano/suitability-system#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "json-server": "^0.17.3"
+  }
+}
