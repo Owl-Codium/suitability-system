@@ -1,0 +1,4 @@
+deployment:
+  tasks:
+  - export DEPLOYPATH=/home/neosnewscom/dev/
+  - /bin/cp -R * $DEPLOYPATH
