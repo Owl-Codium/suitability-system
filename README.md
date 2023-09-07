@@ -19,19 +19,12 @@ Para executar o Sistema de Suitability localmente, siga estas etapas:
 1. Clone o repositório: `git clone [URL_do_repositório]`
 2. Navegue até o diretório do projeto: `cd suitability-system`
 3. Instale as dependências: `npm install`
-4. Inicie o servidor de desenvolvimento: `npm start`
-
-# Json Server
-
-1. Para executar, instale os pacotes com: `npm install`
-2. Inicie o servidor com: `npm start`
-3. Acesse o servidor em: `http://127.0.0.1:3001/questions`
+4. Inicie o servidor com o live server(plugin vs code).
 
 ## Uso
 
-1. Abra seu navegador da web e acesse `http://localhost:3000` para utilizar o sistema.
-2. Complete o questionário respondendo às perguntas fornecidas.
-3. Após responder a todas as perguntas, o sistema exibirá o perfil de investimento do cliente.
+1. Complete o questionário respondendo às perguntas fornecidas.
+2. Após responder a todas as perguntas, o sistema exibirá o perfil de investimento do cliente.
 
 ## Contribuições
 
