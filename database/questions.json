@@ -4,7 +4,10 @@
       "id": 1,
       "question": "Você acompanha as informações do mercado financeiro?",
       "answers": [
-        { "answer": "Não acompanho", "points": 10 },
+        { 
+          "answer": "Não acompanho.", 
+          "points": 10 
+        },
         {
           "answer": "Acompanho apenas as notícias mais comentadas em jornais e revistas, sem regularidade",
           "points": 30
@@ -73,7 +76,10 @@
       "id": 5,
       "question": "Como você reagiria se os seus investimentos apresentassem perda (mesmo que temporariamente)?",
       "answers": [
-        { "answer": "Não sei responder essa questão.", "points": 10 },
+        { 
+          "answer": "Não sei responder essa questão.", 
+          "points": 10 
+        },
         {
           "answer": "Na próxima oportunidade trocaria de perfil de Investimento.",
           "points": 20
@@ -92,10 +98,22 @@
       "id": 6,
       "question": "Você acredita que, em períodos de mais de cinco anos, produtos de maior risco (exemplo ações) são mais atrativos do que produtos de menor risco?",
       "answers": [
-        { "answer": "Não faço idéia", "points": 10 },
-        { "answer": "Não tenho esta expectativa", "points": 20 },
-        { "answer": "Tenho esta expectativa", "points": 40 },
-        { "answer": "Tenho certeza", "points": 50 }
+        { 
+          "answer": "Não faço idéia", 
+          "points": 10 
+        },
+        { 
+          "answer": "Não tenho esta expectativa", 
+          "points": 20 
+        },
+        { 
+          "answer": "Tenho esta expectativa", 
+          "points": 40 
+        },
+        { 
+          "answer": "Tenho certeza", 
+          "points": 50 
+        }
       ]
     },
     {
