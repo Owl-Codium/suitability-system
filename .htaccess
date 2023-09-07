@@ -1,6 +1,0 @@
-RewriteEngine On
-RewriteBase /
-RewriteCond %{REMOTE_ADDR} ^192\.185\.131\.53$
-RewriteRule ^(.*)$ public/$1 [L]
-RewriteCond %{HTTP_HOST} ^(www\.)?neonews\.com\.br$
-RewriteRule ^(.*)$ public/$1 [L]
