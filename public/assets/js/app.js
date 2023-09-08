@@ -1,28 +1,39 @@
 document.addEventListener("DOMContentLoaded", function () {
   const questionElement = document.getElementById('question');
   const answersContainer = document.getElementById('answers');
-  let shuffledQuestions = [];
+  const submitButton = document.getElementById('submit-button');
+  let questions = [];
   let currentQuestionIndex = 0;
+  let totalPoints = 0;
 
   function startGame() {
     currentQuestionIndex = 0;
+    totalPoints = 0;
     setNextQuestion();
   }
 
   function setNextQuestion() {
-    resetState();
-    showQuestion(shuffledQuestions[currentQuestionIndex]);
+    if (currentQuestionIndex < questions.length) {
+      resetState();
+      showQuestion(questions[currentQuestionIndex]);
+    } else {
+      console.log('Quiz concluído!');
+      determineProfile(totalPoints);
+      // window.location.href = 'result.html'; // Redireciona para a página result.html
+    }
   }
 
   function showQuestion(question) {
+    const { id, question: text, answers } = question;
     questionElement.classList.add('question');
-    questionElement.innerText = question.question;
+    questionElement.innerText = `${id} - ${text}`;
 
-    question.answers.forEach(answer => {
+    answers.forEach(answer => {
+      const { answer: text, points } = answer;
       const answerButton = document.createElement('button');
-      answerButton.innerText = answer.answer;
+      answerButton.innerText = text;
       answerButton.classList.add('btn');
-      answerButton.addEventListener('click', () => selectAnswer(answer));
+      answerButton.addEventListener('click', () => selectAnswer(points));
       answersContainer.appendChild(answerButton);
     });
   }
@@ -31,15 +42,19 @@ document.addEventListener("DOMContentLoaded", function () {
     answersContainer.innerHTML = '';
   }
 
-  function selectAnswer(answer) {
-    console.log('Resposta selecionada:', answer.answer);
+  function selectAnswer(points) {
+    totalPoints += points;
     currentQuestionIndex++;
+    setNextQuestion();
+  }
 
-    if (currentQuestionIndex < shuffledQuestions.length) {
-      setNextQuestion();
-    } else {
-      console.log('Quiz concluído!');
-    }
+  function determineProfile(points) {
+    const profile =
+      points <= 50 ? 'Super Conservador' :
+        points <= 100 ? 'Conservador' :
+          points <= 150 ? 'Moderado' :
+            'Agressivo';
+    console.log(`Pontos: ${totalPoints} - Perfil ${profile}`);
   }
 
   const data = {
@@ -214,8 +229,9 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     ]
   };
+
   if (Array.isArray(data.questions)) {
-    shuffledQuestions = [...data.questions].sort(() => Math.random() - 0.5);
+    questions = [...data.questions];
     startGame();
   } else {
     console.error('Os dados não são uma matriz:', data);
