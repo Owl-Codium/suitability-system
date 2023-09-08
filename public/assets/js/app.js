@@ -1,17 +1,28 @@
 document.addEventListener("DOMContentLoaded", function () {
   const questionElement = document.getElementById('question');
   const answersContainer = document.getElementById('answers');
-  const submitButton = document.getElementById('submit-button');
+  const resultElement = document.getElementById('result');
+  const resetButton = document.getElementById('reset-button');
+
+  // Botão de reiniciar o jogo.
+  resetButton.addEventListener('click', () => {
+    startGame();
+  });
+
+  // Variáveis do jogo.
   let questions = [];
   let currentQuestionIndex = 0;
   let totalPoints = 0;
 
+  // Inicia o jogo.
   function startGame() {
     currentQuestionIndex = 0;
     totalPoints = 0;
+    resultElement.innerText = '';
     setNextQuestion();
   }
 
+  // Define a próxima pergunta.
   function setNextQuestion() {
     if (currentQuestionIndex < questions.length) {
       resetState();
@@ -19,10 +30,13 @@ document.addEventListener("DOMContentLoaded", function () {
     } else {
       console.log('Quiz concluído!');
       determineProfile(totalPoints);
-      // window.location.href = 'result.html'; // Redireciona para a página result.html
+      answersContainer.innerHTML = '';
+      questionElement.innerText = '';
+      resultElement.innerText = `Pontos: ${totalPoints} - Perfil ${determineProfile(totalPoints)}`;
     }
   }
 
+  // Mostra a pergunta e as alternativas.
   function showQuestion(question) {
     const { id, question: text, answers } = question;
     questionElement.classList.add('question');
@@ -38,25 +52,29 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
+  // Limpa o estado anterior.
   function resetState() {
     answersContainer.innerHTML = '';
   }
 
+  // Seleciona a resposta.
   function selectAnswer(points) {
     totalPoints += points;
     currentQuestionIndex++;
     setNextQuestion();
   }
 
+  // Determina o perfil do investidor
   function determineProfile(points) {
     const profile =
       points <= 50 ? 'Super Conservador' :
         points <= 100 ? 'Conservador' :
           points <= 150 ? 'Moderado' :
             'Agressivo';
-    console.log(`Pontos: ${totalPoints} - Perfil ${profile}`);
+    return profile;
   }
 
+  // Perguntas e respostas
   const data = {
     "questions": [
       {
@@ -230,6 +248,7 @@ document.addEventListener("DOMContentLoaded", function () {
     ]
   };
 
+  // Inicia o jogo.
   if (Array.isArray(data.questions)) {
     questions = [...data.questions];
     startGame();
