@@ -1,4 +1,6 @@
+
 document.addEventListener("DOMContentLoaded", function () {
+  // Elementos do jogo.
   const questionElement = document.getElementById('question');
   const answersContainer = document.getElementById('answers');
   const resultElement = document.getElementById('result');
@@ -68,9 +70,9 @@ document.addEventListener("DOMContentLoaded", function () {
   // Determina o perfil do investidor
   function determineProfile(points) {
     const profile =
-      points <= 50 ? 'Seu perfil é Super Conservador.' :
-        points <= 100 ? 'Seu perfil é Conservador.' :
-          points <= 150 ? 'Seu perfil é Moderado.' :
+      points <= 110 ? 'Seu perfil é Super Conservador.' :
+        points <= 210 ? 'Seu perfil é Conservador.' :
+          points <= 310 ? 'Seu perfil é Moderado.' :
             'Seu perfil é Agressivo.';
     return profile;
   }
