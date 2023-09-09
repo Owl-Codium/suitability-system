@@ -1,5 +1,6 @@
 body {
   background: url('../images/bg.jpg') no-repeat top center;
+  background-size: cover;
   font-family: 'Roboto', sans-serif;
 }
 
@@ -7,22 +8,33 @@ body {
   margin-top: -50px;
 }
 
+.none {
+  display: none;
+}
+
 .button-container {
   text-align: right;
+}
+
+.underlined {
+  text-decoration: underline;
+}
+
+/* Adicione uma classe de transição para as perguntas */
+.transition-question {
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 }
 
 .button {
   display: inline-block;
   padding: 10px 30px;
   background-color: #fff;
-  /* Cor de fundo branca */
   color: #527c33;
-  /* Cor do texto do botão */
   border: none;
   border-radius: 50px;
-  /* Borda arredondada */
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  /* Sombra */
   cursor: pointer;
   font-size: 20px;
   text-align: center;
@@ -34,26 +46,19 @@ body {
 }
 
 #result {
+  font-family: 'OCR A Std', monospace;
   display: none;
-  /* Defina a cor de fundo desejada, substituindo #f8f9fa */
   font-size: 36px;
-  /* Aumente o tamanho da fonte conforme necessário */
   color: white;
-  /* Defina a cor do texto como branca */
   text-align: center;
-  /* Centralize o texto horizontalmente */
   display: flex;
   justify-content: center;
-  /* Centralize o texto verticalmente */
   align-items: center;
   height: 200px;
-  /* Defina a altura desejada para o elemento */
 }
 
-/* Estilizando o botão quando o mouse passa por cima */
 .button:hover {
   background-color: #eee;
-  /* Cor de fundo alterada */
 }
 
 #question {
@@ -77,11 +82,35 @@ body {
   display: block;
   background-color: transparent;
   border: none;
-  font-size:25px;
+  font-size: 25px;
   text-align: left;
   margin-bottom: 10px;
 }
 
+#return-btn-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+#returnBtn {
+  padding: 10px 30px;
+  background-color: #fff;
+  color: #1a2b0f;
+  border: none;
+  border-radius: 50px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  font-size: 20px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: lighter;
+}
+
+#returnBtn:hover {
+  background-color: #eee;
+}
 
 /* X-Small devices (portrait phones, less than 576px)
 No media query for `xs` since this is the default in Bootstrap */

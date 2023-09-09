@@ -4,13 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const questionElement = document.getElementById('question');
   const answersContainer = document.getElementById('answers');
   const resultElement = document.getElementById('result');
-  // const resetButton = document.getElementById('reset-button');
-
-  // Botão de reiniciar o jogo.
-  // resetButton.addEventListener('click', () => {
-  //   startGame();
-  // });
-
+  const returnButton = document.getElementById('returnBtn');
   // Variáveis do jogo.
   let questions = [];
   let currentQuestionIndex = 0;
@@ -35,26 +29,31 @@ document.addEventListener("DOMContentLoaded", function () {
       answersContainer.innerHTML = '';
       questionElement.innerText = '';
       resultElement.style.display = 'block';
-      resultElement.innerText = `${determineProfile(totalPoints)}`;
+      resultElement.innerHTML = determineProfile(totalPoints);
+      returnButton.classList.remove('none');
     }
   }
 
   // Mostra a pergunta e as alternativas.
   function showQuestion(question) {
     const { id, question: text, answers } = question;
-    questionElement.classList.add('question');
-    questionElement.innerText = `${id} - ${text}`;
 
-    answers.forEach(answer => {
-      const { answer: text, points } = answer;
-      const answerButton = document.createElement('button');
-      answerButton.innerText = text;
-      answerButton.classList.add('answer');
-      answerButton.addEventListener('click', () => selectAnswer(points));
-      answersContainer.appendChild(answerButton);
-    });
+    questionElement.classList.add('transition-question');
+
+    setTimeout(() => {
+      questionElement.innerText = `${id} - ${text}`;
+      answers.forEach(answer => {
+        const { answer: text, points } = answer;
+        const answerButton = document.createElement('button');
+        answerButton.innerText = text;
+        answerButton.classList.add('answer');
+        answerButton.addEventListener('click', () => selectAnswer(points));
+        answersContainer.appendChild(answerButton);
+      });
+
+      questionElement.classList.remove('transition-question');
+    }, 500);
   }
-
   // Limpa o estado anterior.
   function resetState() {
     answersContainer.innerHTML = '';
@@ -69,13 +68,20 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Determina o perfil do investidor
   function determineProfile(points) {
-    const profile =
-      points <= 110 ? 'Seu perfil é Super Conservador.' :
-        points <= 210 ? 'Seu perfil é Conservador.' :
-          points <= 310 ? 'Seu perfil é Moderado.' :
-            'Seu perfil é Agressivo.';
-    return profile;
+    let profileText = '';
+    if (points <= 110) {
+      profileText = 'Seu perfil é <u>Super Conservador</u>.';
+    } else if (points <= 210) {
+      profileText = 'Seu perfil é <u>Conservador</u>.';
+    } else if (points <= 310) {
+      profileText = 'Seu perfil é <u>Moderado</u>.';
+    } else {
+      profileText = 'Seu perfil é <u>Agressivo</u>.';
+    }
+    return profileText;
   }
+
+
 
   // Perguntas e respostas
   const data = {
