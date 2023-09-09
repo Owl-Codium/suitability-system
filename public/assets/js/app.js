@@ -32,7 +32,8 @@ document.addEventListener("DOMContentLoaded", function () {
       determineProfile(totalPoints);
       answersContainer.innerHTML = '';
       questionElement.innerText = '';
-      resultElement.innerText = `Pontos: ${totalPoints} - Perfil ${determineProfile(totalPoints)}`;
+      resultElement.style.display = 'block';
+      resultElement.innerText = `${determineProfile(totalPoints)}`;
     }
   }
 
@@ -67,10 +68,10 @@ document.addEventListener("DOMContentLoaded", function () {
   // Determina o perfil do investidor
   function determineProfile(points) {
     const profile =
-      points <= 50 ? 'Super Conservador' :
-        points <= 100 ? 'Conservador' :
-          points <= 150 ? 'Moderado' :
-            'Agressivo';
+      points <= 50 ? 'Seu perfil é Super Conservador.' :
+        points <= 100 ? 'Seu perfil é Conservador.' :
+          points <= 150 ? 'Seu perfil é Moderado.' :
+            'Seu perfil é Agressivo.';
     return profile;
   }
 

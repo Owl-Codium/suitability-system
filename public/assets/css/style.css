@@ -33,6 +33,23 @@ body {
   margin-top: 30px;
 }
 
+#result {
+  display: none;
+  /* Defina a cor de fundo desejada, substituindo #f8f9fa */
+  font-size: 36px;
+  /* Aumente o tamanho da fonte conforme necessário */
+  color: white;
+  /* Defina a cor do texto como branca */
+  text-align: center;
+  /* Centralize o texto horizontalmente */
+  display: flex;
+  justify-content: center;
+  /* Centralize o texto verticalmente */
+  align-items: center;
+  height: 200px;
+  /* Defina a altura desejada para o elemento */
+}
+
 /* Estilizando o botão quando o mouse passa por cima */
 .button:hover {
   background-color: #eee;
