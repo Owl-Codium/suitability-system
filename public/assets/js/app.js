@@ -4,12 +4,12 @@ document.addEventListener("DOMContentLoaded", function () {
   const questionElement = document.getElementById('question');
   const answersContainer = document.getElementById('answers');
   const resultElement = document.getElementById('result');
-  const resetButton = document.getElementById('reset-button');
+  // const resetButton = document.getElementById('reset-button');
 
   // Botão de reiniciar o jogo.
-  resetButton.addEventListener('click', () => {
-    startGame();
-  });
+  // resetButton.addEventListener('click', () => {
+  //   startGame();
+  // });
 
   // Variáveis do jogo.
   let questions = [];
@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const { answer: text, points } = answer;
       const answerButton = document.createElement('button');
       answerButton.innerText = text;
-      answerButton.classList.add('btn');
+      answerButton.classList.add('answer');
       answerButton.addEventListener('click', () => selectAnswer(points));
       answersContainer.appendChild(answerButton);
     });
