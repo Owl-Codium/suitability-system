@@ -1,4 +1,4 @@
-## Sistema de Suitability
+# Sistema de Suitability
 
 ## Descrição
 
@@ -18,8 +18,7 @@ Para executar o Sistema de Suitability localmente, siga estas etapas:
 
 1. Clone o repositório: `git clone [URL_do_repositório]`
 2. Navegue até o diretório do projeto: `cd suitability-system`
-3. Instale as dependências: `npm install`
-4. Inicie o servidor com o live server(plugin vs code).
+3. Inicie o servidor com o live server(plugin vs code).
 
 ## Uso
 
