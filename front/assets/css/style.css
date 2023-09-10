@@ -1,48 +1,135 @@
+html,
 body {
-  background: url("../images/bg.jpg") no-repeat top center;
-  font-family: "Roboto", sans-serif;
+  height: 100%;
 }
 
-.title {
-  margin-top: -50px;
+body {
+  background: url('../images/bg.jpg') no-repeat top center;
+  background-size: cover;
+  background-attachment: fixed;
+  font-family: 'Vonique 43', sans-serif;
+  color: #fff;
+  margin: 20px;
 }
 
-.button {
-  display: inline-block;
-  padding: 10px 30px;
+.btn-start {
+  padding: 10px 20px 0 20px;
   background-color: #fff;
-  color: #527c33;
-  border: none;
-  border-radius: 50px;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  cursor: pointer;
-  font-size: 20px;
-  text-align: center;
-  text-decoration: none;
-  text-transform: uppercase;
-  font-weight: lighter;
-  /* float: right; */
-  margin-top: 30px;
 }
 
-.button:hover {
+.btn-start > a {
+  padding: 0;
+  margin: 0;
+  font-size: 30px;
+  color: #527c33;
+  text-decoration: none;
+}
+
+.btn-start:hover {
   background-color: #eee;
 }
 
-.form-check-input[type="radio"] {
+.btn-return {
+  padding: 10px 20px 0 20px;
+  background-color: #fff;
+}
+
+.btn-return > a {
+  padding: 0;
+  margin: 0;
+  font-size: 30px;
+  color: #527c33;
+  text-decoration: none;
+}
+
+.btn-return:hover {
+  background-color: #eee;
+}
+
+/* Questions and Answers */
+#question {
+  margin-bottom: 30px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.answer::before {
+  content: '';
+  display: inline-block;
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  margin-top: 10px;
+  background-color: #fff;
+  margin-right: 10px;
 }
 
-@media (min-width: 992px) {
-  .title {
-    margin-top: -150px;
+.answer {
+  font-family: 'Roboto', sans-serif;
+  color: #fff;
+  display: block;
+  background-color: transparent;
+  border: none;
+  font-size: 25px;
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+.termometro {
+  margin-top: -50px;
+}
+
+#result {
+  display: none;
+  font-size: 30px;
+  color: #fff;
+  height: 200px;
+  margin-top: 30px;
+}
+
+/* X-Small devices (portrait phones, less than 576px)
+No media query for `xs` since this is the default in Bootstrap */
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) 
+{  
+
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) 
+{  
+  .titulo {
+    margin-top: -80px;
   }
 
-  .button {
+  .termometro {
+    margin-top: -80px;
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) 
+{
+  .btn-start > a {
     font-size: 54px;
-    padding: 10px 50px;
+  }
+
+  .titulo {
+    margin-top: -180px;
+  }
+
+  .termometro {
+    margin-top: -180px;
   }
 }
+
+/* X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) 
+{  
+
+}
+
+/* XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) 
+{  
+
+} 

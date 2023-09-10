@@ -5,121 +5,39 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Suitability</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+        <link href="https://fonts.cdnfonts.com/css/vonique-43" rel="stylesheet">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap" rel="stylesheet">
         <link href="assets/css/style.css" rel="stylesheet">
     </head>
-    <body>
+    <body class="">
         <div class="container">
             <div class="row">
                 <div class="col text-center">
-                    <img src="assets/images/logo.png" class="img-fluid" alt="Suitability" />
+                    <img src="assets/images/logo.png" class="img-fluid" />
                 </div>
             </div>
-            <div class="row title">
-                <div class="col-md-6 order-md-1 order-2">
-                    <img src="assets/images/termometro.png" class="img-fluid" alt="Termometro" />
+            <div class="row termometro">
+                <div class="col-md-6 text-center">
+                    <img id="img-termometro" src="assets/images/termometro.png" class="img-fluid" />
+                    <img id="img-woman" src="assets/images/woman.png" class="img-fluid d-none" />
                 </div>
-                <div class="col-md-6 order-md-2 order-1">
-                    <div id="q1" class="">
-                        <div class="row">
-                            <h1 class="text-white fw-bold">Você acompanha as informações do mercado financeiro?</h1>
-                        </div>
-                        <div class="row">
-                            <div class="col-1">
-                                <input class="form-check-input me-2" type="radio" name="exampleRadios" id="exampleRadios1" value="option1">
-                            </div>
-                            <div class="col-11">
-                                <label class="form-check-label text-white fs-4" for="exampleRadios2">
-                                    Não acompanho.
-                                </label>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-1">
-                                <input class="form-check-input me-2" type="radio" name="exampleRadios" id="exampleRadios1" value="option1">
-                            </div>
-                            <div class="col-11">
-                                <label class="form-check-label text-white fs-4" for="exampleRadios2">
-                                Acompanho apenas as notícias mais comentadas em jornais e revistas, sem regularidade.
-                                </label>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-1">
-                                <input class="form-check-input me-2" type="radio" name="exampleRadios" id="exampleRadios1" value="option1">
-                            </div>
-                            <div class="col-11">
-                                <label class="form-check-label text-white fs-4" for="exampleRadios2">
-                                    Sim, acompanho regularmente por meios de comunicação especializados (plataformas digitais, mídias etc.).
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div id="q2" class="d-none">
-                        <div class="row">
-                            <h1 class="text-white fw-bold">Como você classifica sua experiência com investimentos?</h1>
-                        </div>
-                        <div class="row">
-                            <div class="col-1">
-                                <input class="form-check-input me-2" type="radio" name="exampleRadios" id="exampleRadios1" value="option1">
-                            </div>
-                            <div class="col-11">
-                                <label class="form-check-label text-white fs-4" for="exampleRadios2">
-                                    Nenhum: Não conheço e nunca investi no Mercado Financeiro.
-                                </label>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-1">
-                                <input class="form-check-input me-2" type="radio" name="exampleRadios" id="exampleRadios1" value="option1">
-                            </div>
-                            <div class="col-11">
-                                <label class="form-check-label text-white fs-4" for="exampleRadios2">
-                                    Básico: Pois acompanho esporadicamente o mercado, e me sinto desconfortável para tomar decisões sem aconselhamento profissional. Exemplos: Poupança, CDBs e outros produtos bancários de Renda Fixa.
-                                </label>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-1">
-                                <input class="form-check-input me-2" type="radio" name="exampleRadios" id="exampleRadios1" value="option1">
-                            </div>
-                            <div class="col-11">
-                                <label class="form-check-label text-white fs-4" for="exampleRadios2">
-                                    Suficiente: Invisto e tenho conhecimento pleno sobre os produtos oferecidos da Instituição e do Mercado Financeiro. Exemplos: Ações e Produtos Estruturados.
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div id="q3" class="d-none">
-                        
-                    </div>
-
-                    <div id="q4" class="d-none">
-                        
-                    </div>
-
-                    <div id="q5" class="d-none">
-                        
-                    </div>
-
-                    <div id="q6" class="d-none">
-                        
-                    </div>
-
-                    <div id="q7" class="d-none">
-                        
-                    </div>
-
-                    <div id="q8" class="d-none">
-                        
+                <div class="col-md-6 py-4">
+                    <h2 class="question text-white fw-bold" id="question"></h2>
+                    <div id="answers" class="answers"></div>
+                    <div id="result" class="result"></div>
+                </div>
+            </div>
+            <div id="returnBtn" class="row">
+                <div class="col d-flex flex-row-reverse">
+                    <div class="btn-return my-5 rounded-pill shadow-lg">
+                        <a href="inicio.html">retornar</a>
                     </div>
                 </div>
-            </div>                        
+            </div>
         </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+        <script src="./assets/js/app.js" defer></script>
     </body>
 </html>
