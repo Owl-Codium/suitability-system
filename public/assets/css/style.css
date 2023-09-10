@@ -1,27 +1,20 @@
-/* Base Styles */
+html,
+body {
+  height: 100%;
+}
+
 body {
   background: url('../images/bg.jpg') no-repeat top center;
   background-size: cover;
   background-attachment: fixed;
-  font-family: 'Roboto', sans-serif;
-  margin: 0;
-  padding: 0;
+  font-family: 'Vonique 43', sans-serif;
+  color: #fff;
+  margin: 20px;
 }
 
-.title {
-  margin-top: -50px;
-}
-
-.none {
-  display: none;
-}
-
-.button-container {
-  text-align: right;
-}
-
-.underlined {
-  text-decoration: underline;
+.btn-start {
+  padding: 10px 20px 0 20px;
+  background-color: #fff;
 }
 
 .transition-question {
@@ -30,47 +23,39 @@ body {
   transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 }
 
-/* Buttons */
-.button {
-  display: inline-block;
-  padding: 10px 30px;
-  background-color: #fff;
+.btn-start>a {
+  padding: 0;
+  margin: 0;
+  font-size: 30px;
   color: #527c33;
-  border: none;
-  border-radius: 50px;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  cursor: pointer;
-  font-size: 20px;
-  text-align: center;
   text-decoration: none;
-  text-transform: uppercase;
-  font-weight: lighter;
-  margin-left: auto;
-  margin-top: 30px;
-  transition: background-color 0.3s ease-in-out;
 }
 
-.button:hover {
+.btn-start:hover {
   background-color: #eee;
 }
 
-/* Result Display */
-#result {
-  font-family: 'OCR A Std', monospace;
-  display: none;
-  font-size: 36px;
-  color: white;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 200px;
-  margin-top: 30px;
+.btn-return {
+  padding: 10px 20px 0 20px;
+  background-color: #fff;
+}
+
+.btn-return>a {
+  padding: 0;
+  margin: 0;
+  font-size: 30px;
+  color: #527c33;
+  text-decoration: none;
+}
+
+.btn-return:hover {
+  background-color: #eee;
 }
 
 /* Questions and Answers */
 #question {
   margin-bottom: 30px;
+  font-family: 'Roboto', sans-serif;
 }
 
 .answer::before {
@@ -84,6 +69,7 @@ body {
 }
 
 .answer {
+  font-family: 'Roboto', sans-serif;
   color: #fff;
   display: block;
   background-color: transparent;
@@ -93,53 +79,52 @@ body {
   margin-bottom: 10px;
 }
 
-/* Return Button */
-#return-btn-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.termometro {
+  margin-top: -50px;
+}
+
+#result {
+  display: none;
+  font-size: 30px;
+  color: #fff;
+  height: 200px;
   margin-top: 30px;
 }
 
-#returnBtn {
-  padding: 10px 30px;
-  background-color: #fff;
-  color: #1a2b0f;
-  border: none;
-  border-radius: 50px;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  cursor: pointer;
-  font-size: 20px;
-  text-decoration: none;
-  text-transform: uppercase;
-  font-weight: lighter;
-}
+/* X-Small devices (portrait phones, less than 576px)
+No media query for `xs` since this is the default in Bootstrap */
 
-#returnBtn:hover {
-  background-color: #eee;
-}
-
-/* Media Queries */
 /* Small devices (landscape phones, 576px and up) */
-@media (min-width: 576px) {
-  .title {
-    margin-top: -150px;
+@media (min-width: 576px) {}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .titulo {
+    margin-top: -80px;
   }
 
-  .button {
-    font-size: 54px;
-    padding: 10px 50px;
+  .termometro {
+    margin-top: -80px;
   }
 }
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
-  .title {
-    margin-top: -150px;
+  .btn-start>a {
+    font-size: 54px;
   }
 
-  .button {
-    font-size: 54px;
-    padding: 10px 50px;
+  .titulo {
+    margin-top: -180px;
+  }
+
+  .termometro {
+    margin-top: -180px;
   }
 }
+
+/* X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {}
+
+/* XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) {}

@@ -17,7 +17,13 @@ body {
   background-color: #fff;
 }
 
-.btn-start > a {
+.transition-question {
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.btn-start>a {
   padding: 0;
   margin: 0;
   font-size: 30px;
@@ -34,7 +40,7 @@ body {
   background-color: #fff;
 }
 
-.btn-return > a {
+.btn-return>a {
   padding: 0;
   margin: 0;
   font-size: 30px;
@@ -89,14 +95,10 @@ body {
 No media query for `xs` since this is the default in Bootstrap */
 
 /* Small devices (landscape phones, 576px and up) */
-@media (min-width: 576px) 
-{  
-
-}
+@media (min-width: 576px) {}
 
 /* Medium devices (tablets, 768px and up) */
-@media (min-width: 768px) 
-{  
+@media (min-width: 768px) {
   .titulo {
     margin-top: -80px;
   }
@@ -107,9 +109,8 @@ No media query for `xs` since this is the default in Bootstrap */
 }
 
 /* Large devices (desktops, 992px and up) */
-@media (min-width: 992px) 
-{
-  .btn-start > a {
+@media (min-width: 992px) {
+  .btn-start>a {
     font-size: 54px;
   }
 
@@ -123,13 +124,7 @@ No media query for `xs` since this is the default in Bootstrap */
 }
 
 /* X-Large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) 
-{  
-
-}
+@media (min-width: 1200px) {}
 
 /* XX-Large devices (larger desktops, 1400px and up) */
-@media (min-width: 1400px) 
-{  
-
-} 
+@media (min-width: 1400px) {}
