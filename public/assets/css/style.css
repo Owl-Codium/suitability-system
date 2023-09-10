@@ -1,7 +1,11 @@
+/* Base Styles */
 body {
   background: url('../images/bg.jpg') no-repeat top center;
   background-size: cover;
+  background-attachment: fixed;
   font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
 .title {
@@ -20,13 +24,13 @@ body {
   text-decoration: underline;
 }
 
-/* Adicione uma classe de transição para as perguntas */
 .transition-question {
   opacity: 0;
   transform: translateY(-20px);
   transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 }
 
+/* Buttons */
 .button {
   display: inline-block;
   padding: 10px 30px;
@@ -43,8 +47,14 @@ body {
   font-weight: lighter;
   margin-left: auto;
   margin-top: 30px;
+  transition: background-color 0.3s ease-in-out;
 }
 
+.button:hover {
+  background-color: #eee;
+}
+
+/* Result Display */
 #result {
   font-family: 'OCR A Std', monospace;
   display: none;
@@ -55,12 +65,10 @@ body {
   justify-content: center;
   align-items: center;
   height: 200px;
+  margin-top: 30px;
 }
 
-.button:hover {
-  background-color: #eee;
-}
-
+/* Questions and Answers */
 #question {
   margin-bottom: 30px;
 }
@@ -70,8 +78,6 @@ body {
   display: inline-block;
   width: 20px;
   height: 20px;
-  -moz-border-radius: 50%;
-  -webkit-border-radius: 50%;
   border-radius: 50%;
   background-color: #fff;
   margin-right: 10px;
@@ -87,6 +93,7 @@ body {
   margin-bottom: 10px;
 }
 
+/* Return Button */
 #return-btn-container {
   display: flex;
   align-items: center;
@@ -112,14 +119,18 @@ body {
   background-color: #eee;
 }
 
-/* X-Small devices (portrait phones, less than 576px)
-No media query for `xs` since this is the default in Bootstrap */
-
+/* Media Queries */
 /* Small devices (landscape phones, 576px and up) */
-@media (min-width: 576px) {}
+@media (min-width: 576px) {
+  .title {
+    margin-top: -150px;
+  }
 
-/* Medium devices (tablets, 768px and up) */
-@media (min-width: 768px) {}
+  .button {
+    font-size: 54px;
+    padding: 10px 50px;
+  }
+}
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
@@ -132,9 +143,3 @@ No media query for `xs` since this is the default in Bootstrap */
     padding: 10px 50px;
   }
 }
-
-/* X-Large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) {}
-
-/* XX-Large devices (larger desktops, 1400px and up) */
-@media (min-width: 1400px) {}
