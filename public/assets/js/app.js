@@ -5,6 +5,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const answersContainer = document.getElementById('answers');
   const resultElement = document.getElementById('result');
   const returnButton = document.getElementById('returnBtn');
+  const termometroElement = document.getElementById('img-termometro');
+  const womanElement = document.getElementById('img-woman');
   // Variáveis do jogo.
   let questions = [];
   let currentQuestionIndex = 0;
@@ -28,9 +30,11 @@ document.addEventListener("DOMContentLoaded", function () {
       determineProfile(totalPoints);
       answersContainer.innerHTML = '';
       questionElement.innerText = '';
+      termometroElement.classList.add('d-none');
+      womanElement.classList.remove('d-none');
       resultElement.style.display = 'block';
       resultElement.innerHTML = determineProfile(totalPoints);
-      returnButton.classList.remove('none');
+      returnButton.classList.add('d-none');
     }
   }
 
@@ -70,13 +74,13 @@ document.addEventListener("DOMContentLoaded", function () {
   function determineProfile(points) {
     let profileText = '';
     if (points <= 110) {
-      profileText = 'Seu perfil é <u>Super Conservador</u>.';
+      profileText = '<p>seu perfil</p><span style="font-size: 30px; font-weight: bolder; border-bottom: 5px solid #fff;">Super Conservador</span>.';
     } else if (points <= 210) {
-      profileText = 'Seu perfil é <u>Conservador</u>.';
+      profileText = '<p>seu perfil</p><span style="font-size: 30px; font-weight: bolder; border-bottom: 5px solid #fff;">Conservador</span>.';
     } else if (points <= 310) {
-      profileText = 'Seu perfil é <u>Moderado</u>.';
+      profileText = '<p>seu perfil</p><span style="font-size: 30px; font-weight: bolder; border-bottom: 5px solid #fff;">Moderado</span>.';
     } else {
-      profileText = 'Seu perfil é <u>Agressivo</u>.';
+      profileText = '<p>seu perfil</p><span style="font-size: 30px; font-weight: bolder; border-bottom: 5px solid #fff;">Agressivo</span>.';
     }
     return profileText;
   }
