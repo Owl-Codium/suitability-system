@@ -3,6 +3,14 @@ body {
   height: 100%;
 }
 
+@font-face {
+  font-family: "Vonique 43";
+  src: url(../fonts/Vonique43F.woff) format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 body {
   background: url('../images/bg.jpg') no-repeat top center;
   background-size: cover;
@@ -55,7 +63,7 @@ body {
 /* Questions and Answers */
 #question {
   margin-bottom: 30px;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Vonique 43', sans-serif;
 }
 
 .answer::before {
@@ -69,7 +77,7 @@ body {
 }
 
 .answer {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Vonique 43', sans-serif;
   color: #fff;
   display: block;
   background-color: transparent;
@@ -85,10 +93,13 @@ body {
 
 #result {
   display: none;
-  font-size: 30px;
+  font-size: 21px;
   color: #fff;
-  height: 200px;
+  height: 500px;
   margin-top: 30px;
+  position: relative;
+  overflow: auto;
+  line-height: 35px;
 }
 
 /* X-Small devices (portrait phones, less than 576px)
