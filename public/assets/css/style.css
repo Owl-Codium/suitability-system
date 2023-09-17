@@ -102,6 +102,40 @@ body {
   line-height: 35px;
 }
 
+#pointer {
+  position: absolute;
+  width: 72px;
+  height: 121px;
+  top: 50%;
+  left: 50%;
+  background: url(../images/ponteiro.png) 0 0 repeat;
+}
+
+#pointer.deg-90 {
+  margin-left: -60.5px;
+  margin-top: -36px;
+  transform: rotate(-90deg);
+}
+
+#pointer.deg-45 {
+  margin-left: -50px;
+  margin-top: -50px;
+  transform: rotate(-45deg);
+}
+
+#pointer.deg45 {
+  margin-left: -20px;
+  margin-top: -50px;
+  transform: rotate(45deg);
+}
+
+#pointer.deg90 {
+  margin-top: -36px;
+  margin-left: -10px;
+  transform: rotate(90deg);
+}
+
+
 /* X-Small devices (portrait phones, less than 576px)
 No media query for `xs` since this is the default in Bootstrap */
 

@@ -7,6 +7,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const returnButton = document.getElementById('returnBtn');
   const termometroElement = document.getElementById('img-termometro');
   const womanElement = document.getElementById('img-woman');
+  const pointer = document.getElementById('pointer');
+  const image = document.getElementById('thermometer')
   // Variáveis do jogo.
   let questions = [];
   let currentQuestionIndex = 0;
@@ -25,6 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (currentQuestionIndex < questions.length) {
       resetState();
       showQuestion(questions[currentQuestionIndex]);
+      movePointer(totalPoints);
     } else {
       console.log('Quiz concluído!');
       determineProfile(totalPoints);
@@ -54,10 +57,34 @@ document.addEventListener("DOMContentLoaded", function () {
         answerButton.addEventListener('click', () => selectAnswer(points));
         answersContainer.appendChild(answerButton);
       });
-
       questionElement.classList.remove('transition-question');
     }, 500);
   }
+
+  // Mover ponteiro
+  function movePointer(points)
+  {
+    if (points <= 110) {
+      pointer.classList.add('deg-90');
+      pointer.classList.remove('deg-45');
+      thermometer.src='assets/images/superconservador.png'
+    } else if (points <= 210) {
+      pointer.classList.remove('deg-90');
+      pointer.classList.add('deg-45');
+      pointer.classList.remove('deg45');
+      thermometer.src='assets/images/conservador.png'
+    } else if (points <= 310) {
+      pointer.classList.remove('deg-45');
+      pointer.classList.add('deg45');
+      pointer.classList.remove('deg90');
+      thermometer.src='assets/images/moderado.png'
+    } else {
+      pointer.classList.remove('deg45');
+      pointer.classList.add('deg90');
+      thermometer.src='assets/images/agressivo.png'
+    }
+  }
+  
   // Limpa o estado anterior.
   function resetState() {
     answersContainer.innerHTML = '';
