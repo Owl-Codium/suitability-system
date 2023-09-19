@@ -4,13 +4,18 @@ body {
   height: 100%;
 }
 
-/* .font-face {
+@font-face {
   font-family: "Vonique 43";
   src: url(../fonts/Vonique43F.woff) format("woff");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
-} */
+}
+
+.profile-text {
+  font-family: "Vonique 43", sans-serif;
+  font-size: 30px;
+}
 
 body {
   background: url('../images/bg.jpg') no-repeat top center;
@@ -207,6 +212,11 @@ No media query for `xs` since this is the default in Bootstrap */
 
   #pointer {
     margin-bottom: 40px;
+  }
+
+  #img-woman {
+    max-width: 70%;
+    height: auto;
   }
 }
 
