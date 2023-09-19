@@ -29,7 +29,6 @@ document.addEventListener("DOMContentLoaded", function () {
       showQuestion(questions[currentQuestionIndex]);
       movePointer(totalPoints);
     } else {
-      console.log('Quiz concluído!');
       determineProfile(totalPoints);
       answersContainer.innerHTML = '';
       questionElement.innerText = '';
@@ -37,7 +36,6 @@ document.addEventListener("DOMContentLoaded", function () {
       womanElement.classList.remove('d-none');
       resultElement.style.display = 'block';
       resultElement.innerHTML = determineProfile(totalPoints);
-      returnButton.classList.add('d-none');
     }
   }
 
@@ -62,29 +60,28 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // Mover ponteiro
-  function movePointer(points)
-  {
+  function movePointer(points) {
     if (points <= 110) {
       pointer.classList.add('deg-90');
       pointer.classList.remove('deg-45');
-      thermometer.src='assets/images/superconservador.png'
+      thermometer.src = 'assets/images/superconservador.png'
     } else if (points <= 210) {
       pointer.classList.remove('deg-90');
       pointer.classList.add('deg-45');
       pointer.classList.remove('deg45');
-      thermometer.src='assets/images/conservador.png'
+      thermometer.src = 'assets/images/conservador.png'
     } else if (points <= 310) {
       pointer.classList.remove('deg-45');
       pointer.classList.add('deg45');
       pointer.classList.remove('deg90');
-      thermometer.src='assets/images/moderado.png'
+      thermometer.src = 'assets/images/moderado.png'
     } else {
       pointer.classList.remove('deg45');
       pointer.classList.add('deg90');
-      thermometer.src='assets/images/agressivo.png'
+      thermometer.src = 'assets/images/agressivo.png'
     }
   }
-  
+
   // Limpa o estado anterior.
   function resetState() {
     answersContainer.innerHTML = '';
@@ -101,13 +98,13 @@ document.addEventListener("DOMContentLoaded", function () {
   function determineProfile(points) {
     let profileText = '';
     if (points <= 110) {
-      profileText = '<p>seu perfil</p><p><span style="font-size: 30px; font-weight: bolder; text-decoration:underline;">Super Conservador:</span> é composto por ativos com baixo risco com foco na preservação de capital. É recomendado para os participantes que possuem aversão a riscos e que estejam próximos à aposentadoria ou já em recebimento de benefício. No Ciclo de Vida, estão enquadradas neste perfil as pessoas acima de 60 anos de idade.</p><p>A Néos também oferece o perfil de Ciclo de Vida, composto pelos perfis Super Conservador, Conservador, Moderado e Agressivo. Nesta opção, a mudança do perfil fica condicionada a Fase de vida do participante, ou seja, conforme a idade do participante será definido o perfil de investimentos mais adequado de acordo com o ciclo de vida. Cabe ressaltar que o Participante/Assistido que optar pelo Ciclo de Vida autoriza a Entidade a ajustar o seu perfil de acordo com a sua idade e ciclo de vida.</p><p>Na Néos, a mudança do seu Perfil de Investimento é permitida a qualquer tempo, desde que respeitado o intervalo de 6 meses entre elas.</p>';
+      profileText = '<p style="font-size: 30px">Seu perfil é </p><p><span style="font-size: 20px; font-weight: bolder; text-decoration:underline;">Super Conservador:</span> é composto por ativos com baixo risco com foco na preservação de capital. É recomendado para os participantes que possuem aversão a riscos e que estejam próximos à aposentadoria ou já em recebimento de benefício. No Ciclo de Vida, estão enquadradas neste perfil as pessoas acima de 60 anos de idade.</p><p>A Néos também oferece o perfil de Ciclo de Vida, composto pelos perfis Super Conservador, Conservador, Moderado e Agressivo. Nesta opção, a mudança do perfil fica condicionada a Fase de vida do participante, ou seja, conforme a idade do participante será definido o perfil de investimentos mais adequado de acordo com o ciclo de vida. Cabe ressaltar que o Participante/Assistido que optar pelo Ciclo de Vida autoriza a Entidade a ajustar o seu perfil de acordo com a sua idade e ciclo de vida.</p><p>Na Néos, a mudança do seu Perfil de Investimento é permitida a qualquer tempo, desde que respeitado o intervalo de 6 meses entre elas.</p>';
     } else if (points <= 210) {
-      profileText = '<p>seu perfil</p><p><span style="font-size: 30px; font-weight: bolder; text-decoration:underline;">Conservador: </span>sua composição apresenta um grau de risco um pouco superior ao Superconservador. O foco é a preservação de capital, porém com uma relação risco x retorno entre superconservador e moderado. Tem 90% de seus recursos alocada em ativos defensivos, tais como: renda fixa, renda fixa no exterior, multimercados com baixa volatilidade. E os 10% restantes alocados em ativos dinâmicos, tais como: FIP, imobiliários, multimercado estruturados, renda variável local e no exterior. Recomendado para aqueles participantes que aceitam correr um pouco mais de risco para ter um retorno melhor que o taxa de juros livre de risco ou/e que estão se aproximando da idade para se aposentar. No Ciclo de Vida, estão enquadradas neste perfil as pessoas até 60 anos de idade.</p><p>A Néos também oferece o perfil de Ciclo de Vida, composto pelos perfis Super Conservador, Conservador, Moderado e Agressivo. Nesta opção, a mudança do perfil fica condicionada a Fase de vida do participante, ou seja, conforme a idade do participante será definido o perfil de investimentos mais adequado de acordo com o ciclo de vida. Cabe ressaltar que o Participante/Assistido que optar pelo Ciclo de Vida autoriza a Entidade a ajustar o seu perfil de acordo com a sua idade e ciclo de vida.</p><p>Na Néos, a mudança do seu Perfil de Investimento é permitida a qualquer tempo, desde que respeitado o intervalo de 6 meses entre elas.</p>';
+      profileText = '<p style="font-size: 30px">Seu perfil é</p><p><span style="font-size: 20px; font-weight: bolder; text-decoration:underline;">Conservador: </span>sua composição apresenta um grau de risco um pouco superior ao Superconservador. O foco é a preservação de capital, porém com uma relação risco x retorno entre superconservador e moderado. Tem 90% de seus recursos alocada em ativos defensivos, tais como: renda fixa, renda fixa no exterior, multimercados com baixa volatilidade. E os 10% restantes alocados em ativos dinâmicos, tais como: FIP, imobiliários, multimercado estruturados, renda variável local e no exterior. Recomendado para aqueles participantes que aceitam correr um pouco mais de risco para ter um retorno melhor que o taxa de juros livre de risco ou/e que estão se aproximando da idade para se aposentar. No Ciclo de Vida, estão enquadradas neste perfil as pessoas até 60 anos de idade.</p><p>A Néos também oferece o perfil de Ciclo de Vida, composto pelos perfis Super Conservador, Conservador, Moderado e Agressivo. Nesta opção, a mudança do perfil fica condicionada a Fase de vida do participante, ou seja, conforme a idade do participante será definido o perfil de investimentos mais adequado de acordo com o ciclo de vida. Cabe ressaltar que o Participante/Assistido que optar pelo Ciclo de Vida autoriza a Entidade a ajustar o seu perfil de acordo com a sua idade e ciclo de vida.</p><p>Na Néos, a mudança do seu Perfil de Investimento é permitida a qualquer tempo, desde que respeitado o intervalo de 6 meses entre elas.</p>';
     } else if (points <= 310) {
-      profileText = '<p>seu perfil</p><p><span style="font-size: 30px; font-weight: bolder; text-decoration:underline;">Moderado: </span>sua composição apresenta um grau de risco um pouco superior ao Superconservador. O foco é a preservação de capital, porém com uma relação risco x retorno entre superconservador e moderado. Tem 90% de seus recursos alocada em ativos defensivos, tais como: renda fixa, renda fixa no exterior, multimercados com baixa volatilidade. E os 10% restantes alocados em ativos dinâmicos, tais como: FIP, imobiliários, multimercado estruturados, renda variável local e no exterior. Recomendado para aqueles participantes que aceitam correr um pouco mais de risco para ter um retorno melhor que o taxa de juros livre de risco ou/e que estão se aproximando da idade para se aposentar. No Ciclo de Vida, estão enquadradas neste perfil as pessoas até 60 anos de idade.</p><p>A Néos também oferece o perfil de Ciclo de Vida, composto pelos perfis Super Conservador, Conservador, Moderado e Agressivo. Nesta opção, a mudança do perfil fica condicionada a Fase de vida do participante, ou seja, conforme a idade do participante será definido o perfil de investimentos mais adequado de acordo com o ciclo de vida. Cabe ressaltar que o Participante/Assistido que optar pelo Ciclo de Vida autoriza a Entidade a ajustar o seu perfil de acordo com a sua idade e ciclo de vida.</p><p>Na Néos, a mudança do seu Perfil de Investimento é permitida a qualquer tempo, desde que respeitado o intervalo de 6 meses entre elas.</p>';
+      profileText = '<p style="font-size: 30px">Seu perfil é</p><p><span style="font-size: 20px; font-weight: bolder; text-decoration:underline;">Moderado: </span>sua composição apresenta um grau de risco um pouco superior ao Superconservador. O foco é a preservação de capital, porém com uma relação risco x retorno entre superconservador e moderado. Tem 90% de seus recursos alocada em ativos defensivos, tais como: renda fixa, renda fixa no exterior, multimercados com baixa volatilidade. E os 10% restantes alocados em ativos dinâmicos, tais como: FIP, imobiliários, multimercado estruturados, renda variável local e no exterior. Recomendado para aqueles participantes que aceitam correr um pouco mais de risco para ter um retorno melhor que o taxa de juros livre de risco ou/e que estão se aproximando da idade para se aposentar. No Ciclo de Vida, estão enquadradas neste perfil as pessoas até 60 anos de idade.</p><p>A Néos também oferece o perfil de Ciclo de Vida, composto pelos perfis Super Conservador, Conservador, Moderado e Agressivo. Nesta opção, a mudança do perfil fica condicionada a Fase de vida do participante, ou seja, conforme a idade do participante será definido o perfil de investimentos mais adequado de acordo com o ciclo de vida. Cabe ressaltar que o Participante/Assistido que optar pelo Ciclo de Vida autoriza a Entidade a ajustar o seu perfil de acordo com a sua idade e ciclo de vida.</p><p>Na Néos, a mudança do seu Perfil de Investimento é permitida a qualquer tempo, desde que respeitado o intervalo de 6 meses entre elas.</p>';
     } else {
-      profileText = '<p>seu perfil</p><p><span style="font-size: 30px; font-weight: bolder; text-decoration:underline;">Agressivo: </span> sua composição apresenta uma relação risco x retorno mais arrojada. O foco é a acumulação de capital. Tem 50% de seus recursos alocada em ativos defensivos, tais como: renda fixa, renda fixa no exterior, multimercados com baixa volatilidade. E os 50% restantes alocados em ativos dinâmicos, tais como: FIP, imobiliários, multimercado estruturados, renda variável local e no exterior. Recomendado para aqueles participantes ou assistidos que são tolerantes ao risco e aceitam correr risco em busca de maiores retornos. No Ciclo de Vida, estão enquadradas neste perfil as pessoas até 50 anos de idade.</p><p>A Néos também oferece o perfil de Ciclo de Vida, composto pelos perfis Super Conservador, Conservador, Moderado e Agressivo. Nesta opção, a mudança do perfil fica condicionada a Fase de vida do participante, ou seja, conforme a idade do participante será definido o perfil de investimentos mais adequado de acordo com o ciclo de vida. Cabe ressaltar que o Participante/Assistido que optar pelo Ciclo de Vida autoriza a Entidade a ajustar o seu perfil de acordo com a sua idade e ciclo de vida.</p><p>Na Néos, a mudança do seu Perfil de Investimento é permitida a qualquer tempo, desde que respeitado o intervalo de 6 meses entre elas.</p>';
+      profileText = '<p style="font-size: 30px">Seu perfil é</p><p><span style="font-size: 20px; font-weight: bolder; text-decoration:underline;">Agressivo: </span> sua composição apresenta uma relação risco x retorno mais arrojada. O foco é a acumulação de capital. Tem 50% de seus recursos alocada em ativos defensivos, tais como: renda fixa, renda fixa no exterior, multimercados com baixa volatilidade. E os 50% restantes alocados em ativos dinâmicos, tais como: FIP, imobiliários, multimercado estruturados, renda variável local e no exterior. Recomendado para aqueles participantes ou assistidos que são tolerantes ao risco e aceitam correr risco em busca de maiores retornos. No Ciclo de Vida, estão enquadradas neste perfil as pessoas até 50 anos de idade.</p><p>A Néos também oferece o perfil de Ciclo de Vida, composto pelos perfis Super Conservador, Conservador, Moderado e Agressivo. Nesta opção, a mudança do perfil fica condicionada a Fase de vida do participante, ou seja, conforme a idade do participante será definido o perfil de investimentos mais adequado de acordo com o ciclo de vida. Cabe ressaltar que o Participante/Assistido que optar pelo Ciclo de Vida autoriza a Entidade a ajustar o seu perfil de acordo com a sua idade e ciclo de vida.</p><p>Na Néos, a mudança do seu Perfil de Investimento é permitida a qualquer tempo, desde que respeitado o intervalo de 6 meses entre elas.</p>';
     }
     return profileText;
   }

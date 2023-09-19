@@ -1,69 +1,78 @@
+/* CSS GERAL*/
 html,
 body {
   height: 100%;
 }
 
-@font-face {
+/* .font-face {
   font-family: "Vonique 43";
   src: url(../fonts/Vonique43F.woff) format("woff");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
-}
+} */
 
 body {
   background: url('../images/bg.jpg') no-repeat top center;
   background-size: cover;
   background-attachment: fixed;
-  font-family: 'Vonique 43', sans-serif;
+  font-family: 'Lato', sans-serif;
   color: #fff;
   margin: 20px;
 }
 
+/* CSS para o botão INICIAR */
 .btn-start {
-  padding: 10px 20px 0 20px;
-  background-color: #fff;
-}
-
-.transition-question {
-  opacity: 0;
-  transform: translateY(-20px);
-  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 30px;
+  background-color: #dfdcdc;
+  border: none;
+  border-radius: 50px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease-in-out;
 }
 
 .btn-start>a {
-  padding: 0;
-  margin: 0;
-  font-size: 30px;
+  font-size: 20px;
   color: #527c33;
   text-decoration: none;
+  text-transform: uppercase;
 }
 
 .btn-start:hover {
-  background-color: #eee;
+  background-color: #d1cccc;
 }
 
+/* CSS para o botão Retornar */
 .btn-return {
-  padding: 10px 20px 0 20px;
-  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 30px;
+  background-color: #dfdcdc;
+  border: none;
+  border-radius: 50px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease-in-out;
 }
 
 .btn-return>a {
-  padding: 0;
-  margin: 0;
-  font-size: 30px;
+  font-size: 20px;
   color: #527c33;
   text-decoration: none;
+  text-transform: uppercase;
 }
 
 .btn-return:hover {
-  background-color: #eee;
+  background-color: #d1cccc;
 }
 
 /* Questions and Answers */
 #question {
   margin-bottom: 30px;
-  font-family: 'Vonique 43', sans-serif;
+  font-size: 25px;
 }
 
 .answer::before {
@@ -77,12 +86,11 @@ body {
 }
 
 .answer {
-  font-family: 'Vonique 43', sans-serif;
   color: #fff;
   display: block;
   background-color: transparent;
   border: none;
-  font-size: 25px;
+  font-size: 22px;
   text-align: left;
   margin-bottom: 10px;
 }
@@ -165,6 +173,40 @@ No media query for `xs` since this is the default in Bootstrap */
 
   .termometro {
     margin-top: -180px;
+  }
+}
+
+@media (max-width: 576px) {
+  .answer {
+    font-size: 16px;
+  }
+
+  .answer::before {
+    content: '';
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: #fff;
+    margin-right: 10px;
+  }
+
+  #question {
+    font-size: 18px;
+  }
+
+  .btn-start {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+
+  .btn-return {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+
+  #pointer {
+    margin-bottom: 40px;
   }
 }
 
