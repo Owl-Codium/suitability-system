@@ -171,7 +171,7 @@ document.addEventListener("DOMContentLoaded", function () {
       },
       {
         "id": 4,
-        "question": "Qual a alternativa melhor descreve o seu comportamento em relação ao risco de perda na sua aposentadoria",
+        "question": "Qual a alternativa melhor descreve o seu comportamento em relação ao risco de perda na sua aposentadoria?",
         "answers": [
           {
             "answer": "Não quero perdas, mesmo que ocasionais, e aceito que minha rentabilidade poderá ser menor.",
@@ -214,7 +214,7 @@ document.addEventListener("DOMContentLoaded", function () {
         "question": "Você acredita que, em períodos de mais de cinco anos, produtos de maior risco (exemplo ações) são mais atrativos do que produtos de menor risco?",
         "answers": [
           {
-            "answer": "Não faço idéia",
+            "answer": "Não faço ideia",
             "points": 10
           },
           {
