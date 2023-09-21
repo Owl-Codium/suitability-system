@@ -14,7 +14,7 @@ body {
 
 .profile-text {
   font-family: "Vonique 43", sans-serif;
-  font-size: 30px;
+  font-size: 25px;
 }
 
 body {
@@ -108,10 +108,10 @@ body {
   display: none;
   font-size: 21px;
   color: #fff;
-  height: 500px;
+  /* height: 500px; */
   margin-top: 30px;
   position: relative;
-  overflow: auto;
+  /* overflow: auto; */
   line-height: 35px;
 }
 
