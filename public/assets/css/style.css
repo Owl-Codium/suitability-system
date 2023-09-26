@@ -226,7 +226,7 @@ No media query for `xs` since this is the default in Bootstrap */
   }
 
   #img-woman {
-    max-width: 70%;
+    max-width: 45%;
     height: auto;
   }
 }
