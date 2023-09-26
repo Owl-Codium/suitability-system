@@ -18,14 +18,19 @@ body {
 }
 
 body {
-  background: url('../images/bg.jpg') no-repeat top center;
+  background: url("../images/bg.jpg") no-repeat top center;
   background-size: cover;
   background-attachment: fixed;
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
   color: #fff;
   margin: 20px;
 }
 
+.woman-start {
+  max-width: 30%;
+  height: auto;
+  margin-top: -50px;
+}
 /* CSS para o botão INICIAR */
 .btn-start {
   display: flex;
@@ -39,7 +44,7 @@ body {
   transition: background-color 0.3s ease-in-out;
 }
 
-.btn-start>a {
+.btn-start > a {
   font-size: 20px;
   color: #527c33;
   text-decoration: none;
@@ -63,7 +68,7 @@ body {
   transition: background-color 0.3s ease-in-out;
 }
 
-.btn-return>a {
+.btn-return > a {
   font-size: 20px;
   color: #527c33;
   text-decoration: none;
@@ -81,7 +86,7 @@ body {
 }
 
 .answer::before {
-  content: '';
+  content: "";
   display: inline-block;
   width: 20px;
   height: 20px;
@@ -148,12 +153,12 @@ body {
   transform: rotate(90deg);
 }
 
-
 /* X-Small devices (portrait phones, less than 576px)
 No media query for `xs` since this is the default in Bootstrap */
 
 /* Small devices (landscape phones, 576px and up) */
-@media (min-width: 576px) {}
+@media (min-width: 576px) {
+}
 
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
@@ -168,7 +173,7 @@ No media query for `xs` since this is the default in Bootstrap */
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
-  .btn-start>a {
+  .btn-start > a {
     font-size: 54px;
   }
 
@@ -182,12 +187,18 @@ No media query for `xs` since this is the default in Bootstrap */
 }
 
 @media (max-width: 576px) {
+  .titulo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
   .answer {
     font-size: 16px;
   }
 
   .answer::before {
-    content: '';
+    content: "";
     display: inline-block;
     width: 15px;
     height: 15px;
@@ -221,7 +232,9 @@ No media query for `xs` since this is the default in Bootstrap */
 }
 
 /* X-Large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) {}
+@media (min-width: 1200px) {
+}
 
 /* XX-Large devices (larger desktops, 1400px and up) */
-@media (min-width: 1400px) {}
+@media (min-width: 1400px) {
+}
