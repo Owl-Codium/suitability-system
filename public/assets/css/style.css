@@ -16,7 +16,10 @@ body {
   font-family: "Vonique 43", sans-serif;
   font-size: 25px;
 }
-
+#img-woman-answer {
+  max-width: 90%;
+  height: auto;
+}
 body {
   background: url("../images/bg.jpg") no-repeat top center;
   background-size: cover;
@@ -119,7 +122,7 @@ body {
   /* overflow: auto; */
   line-height: 35px;
 }
-
+/*      
 #pointer {
   position: absolute;
   width: 72px;
@@ -151,7 +154,7 @@ body {
   margin-top: -36px;
   margin-left: -10px;
   transform: rotate(90deg);
-}
+} */
 
 /* Loading */
 .loading {
@@ -516,7 +519,7 @@ No media query for `xs` since this is the default in Bootstrap */
     margin-bottom: 40px;
   }
 
-  #img-woman {
+  .img-woman {
     max-width: 45%;
     height: auto;
   }
