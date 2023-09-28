@@ -621,7 +621,7 @@ No media query for `xs` since this is the default in Bootstrap */
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
-    <<<<<<< HEAD .btn-start>a {
+    .btn-start>a {
         font-size: 34px;
     }
 
@@ -633,7 +633,7 @@ No media query for `xs` since this is the default in Bootstrap */
         margin-top: -150px;
     }
 
-    =======.btn-start>a {
+    btn-start>a {
         font-size: 54px;
     }
 
@@ -641,7 +641,7 @@ No media query for `xs` since this is the default in Bootstrap */
         margin-top: -180px;
     }
 
-    >>>>>>>a3807a2 (main: novos botoes e lógica.) .termometro {
+    .termometro {
         margin-top: -180px;
     }
 }
