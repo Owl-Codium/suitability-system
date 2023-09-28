@@ -22,6 +22,19 @@ body {
     height: auto;
 }
 
+#loader {
+    position: fixed;
+    display: none;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: url("../images/bg.jpg") no-repeat top center;
+    background-size: cover;
+    background-attachment: fixed;
+    z-index: 999999;
+}
+
 /* CSS personalizado para os botões AVANÇAR e VOLTAR */
 .btn-action {
     display: flex;
