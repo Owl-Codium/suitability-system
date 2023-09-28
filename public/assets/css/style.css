@@ -36,7 +36,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 15px 30px;
+  padding: 10px 20px;
   background-color: #dfdcdc;
   border: none;
   border-radius: 50px;
@@ -461,15 +461,15 @@ No media query for `xs` since this is the default in Bootstrap */
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
   .btn-start > a {
-    font-size: 54px;
+    font-size: 34px;
   }
 
   .titulo {
-    margin-top: -180px;
+    margin-top: -100px;
   }
 
   .btn-start-position {
-    margin-top: -180px;
+    margin-top: -150px;
   }
 
   .termometro {
