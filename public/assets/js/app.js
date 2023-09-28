@@ -1,61 +1,64 @@
 
 document.addEventListener("DOMContentLoaded", function () {
-    // Elementos do jogo.
     const questionElement = document.getElementById('question');
     const answersContainer = document.getElementById('answers');
     const resultElement = document.getElementById('result');
     const termometroElement = document.getElementById('img-termometro');
     const womanElement = document.getElementById('img-woman');
+    const womanAnswer = document.getElementById('img-woman-answer')
+    const btnPrevious = document.getElementById('btn-previous');
+    const btnNext = document.getElementById('btn-next');
+    const btnReturn = document.getElementById('btn-return');
 
-    // const returnButton = document.getElementById('returnBtn');
-    // const pointer = document.getElementById('pointer');
-    // const image = document.getElementById('thermometer')
 
-    // Variáveis do jogo.
     let questions = [];
     let currentQuestionIndex = 0;
     let totalPoints = 0;
+    const selectedAnswerPoints = [];
 
-    // Inicia o jogo.
+
+    function goToNextQuestion() {
+        if (currentQuestionIndex < questions.length - 1) {
+            currentQuestionIndex++;
+            setNextQuestion();
+        }
+    }
+
+    btnNext.addEventListener('click', handleButtonNext);
+
+    btnPrevious.addEventListener('click', () => {
+        if (currentQuestionIndex > 0) {
+            currentQuestionIndex--;
+            setNextQuestion();
+        }
+    });
+
+
     function startGame() {
         currentQuestionIndex = 0;
         totalPoints = 0;
         resultElement.innerText = '';
+        btnReturn.classList.add('d-none');
         setNextQuestion();
     }
-
-    // function toggleImagesAndQuestion() {
-    //     const questionContainer = document.querySelector('.question-container');
-    //     const womanImage = document.querySelector('.woman-image');
-    //     console.log(questionContainer, womanImage)
-
-    //     if (questionContainer && womanImage) {
-    //         setTimeout(() => {
-    //             questionContainer.classList.add('move-left');
-    //             womanImage.classList.add('move-right');
-    //         }, 0);
-    //     }
-    // }
-
-    // Define a próxima pergunta.
     function setNextQuestion() {
         if (currentQuestionIndex < questions.length) {
             resetState();
             showQuestion(questions[currentQuestionIndex]);
-            // toggleImagesAndQuestion();
-            // movePointer(totalPoints);	
         } else {
             determineProfile(totalPoints);
-            answersContainer.innerHTML = '';
+            answersContainer.style.display = 'none';
             questionElement.innerText = '';
             termometroElement.classList.add('d-none');
             womanElement.classList.remove('d-none');
+            womanAnswer.classList.add('d-none');
             resultElement.style.display = 'block';
-            resultElement.innerHTML = determineProfile(totalPoints);
+            if (currentQuestionIndex === questions.length) {
+                resultElement.innerHTML = determineProfile(totalPoints);
+            }
         }
     }
 
-    // Mostra a pergunta e as alternativas.
     function showQuestion(question) {
         const { id, question: text, answers } = question;
 
@@ -68,48 +71,55 @@ document.addEventListener("DOMContentLoaded", function () {
                 const answerButton = document.createElement('button');
                 answerButton.innerText = text;
                 answerButton.classList.add('answer');
-                answerButton.addEventListener('click', () => selectAnswer(points));
+                answerButton.setAttribute('data-points', points);
+                answerButton.addEventListener('click', () => selectAnswer(points, answerButton));
                 answersContainer.appendChild(answerButton);
+
+                if (selectedAnswerPoints[currentQuestionIndex] === points) {
+                    answerButton.classList.add('selected');
+                }
             });
             questionElement.classList.remove('transition-question');
         }, 500);
     }
 
-    // Mover ponteiro
-    // function movePointer(points) {
-    //     if (points <= 110) {
-    //         pointer.classList.add('deg-90');
-    //         pointer.classList.remove('deg-45');
-    //         thermometer.src = 'assets/images/superconservador.png'
-    //     } else if (points <= 210) {
-    //         pointer.classList.remove('deg-90');
-    //         pointer.classList.add('deg-45');
-    //         pointer.classList.remove('deg45');
-    //         thermometer.src = 'assets/images/conservador.png'
-    //     } else if (points <= 310) {
-    //         pointer.classList.remove('deg-45');
-    //         pointer.classList.add('deg45');
-    //         pointer.classList.remove('deg90');
-    //         thermometer.src = 'assets/images/moderado.png'
-    //     } else {
-    //         pointer.classList.remove('deg45');
-    //         pointer.classList.add('deg90');
-    //         thermometer.src = 'assets/images/agressivo.png'
-    //     }
-    // }
+    function handleButtonNext() {
+        if (currentQuestionIndex < questions.length) {
+            const selectedAnswerButtons = document.querySelectorAll('.answer.selected');
+            if (selectedAnswerButtons.length > 0) {
+                const points = parseInt(selectedAnswerButtons[0].getAttribute('data-points'));
+                selectedAnswerPoints[currentQuestionIndex] = points;
+                goToNextQuestion();
 
-    // Limpa o estado anterior.
+                if (currentQuestionIndex === questions.length - 1) {
+
+                    const totalPoints = selectedAnswerPoints.reduce((acc, points) => acc + points, 0);
+                    const profileText = determineProfile(totalPoints);
+                    answersContainer.innerHTML = '';
+                    questionElement.innerText = '';
+                    questionElement.classList.add('d-none');
+                    womanElement.classList.remove('d-none');
+                    womanAnswer.classList.add('d-none');
+                    resultElement.style.display = 'block';
+                    resultElement.innerHTML = profileText;
+
+                }
+            } else {
+                alert("Por favor, selecione uma resposta antes de avançar.");
+            }
+        }
+    }
+
     function resetState() {
         answersContainer.innerHTML = '';
     }
 
-    // Seleciona a resposta.
-    function selectAnswer(points) {
-        totalPoints += points;
-        currentQuestionIndex++;
-        setNextQuestion();
+    function selectAnswer(points, selectedButton) {
+        const answerButtons = document.querySelectorAll('.answer');
+        answerButtons.forEach(button => button.classList.remove('selected'));
+        selectedButton.classList.add('selected');
+        selectedAnswerPoints[currentQuestionIndex] = points;
     }
-
     // Determina o perfil do investidor
     function determineProfile(points) {
         let profileText = '';
@@ -120,14 +130,14 @@ document.addEventListener("DOMContentLoaded", function () {
         } else if (points <= 310) {
             profileText = '<p class="profile-text">Seu perfil é</p><p><span style="font-size: 40px; font-weight: bolder; text-decoration: underline; font-family: \'Vonique 43\', sans-serif;">Moderado:</span><br>Sua composição apresenta um grau de risco um pouco superior ao Superconservador. O foco é a preservação de capital, porém com uma relação risco x retorno entre superconservador e moderado. Tem 90% de seus recursos alocados em ativos defensivos, tais como: renda fixa, renda fixa no exterior, multimercados com baixa volatilidade. E os 10% restantes alocados em ativos dinâmicos, tais como: FIP, imobiliários, multimercado estruturados, renda variável local e no exterior. Recomendado para aqueles participantes que aceitam correr um pouco mais de risco para ter um retorno melhor que o taxa de juros livre de risco ou/e que estão se aproximando da idade para se aposentar. No Ciclo de Vida, estão enquadradas neste perfil as pessoas até 60 anos de idade.</p><p>A Néos também oferece o perfil de Ciclo de Vida, composto pelos perfis Super Conservador, Conservador, Moderado e Agressivo. Nesta opção, a mudança do perfil fica condicionada a Fase de vida do participante, ou seja, conforme a idade do participante será definido o perfil de investimentos mais adequado de acordo com o ciclo de vida. Cabe ressaltar que o Participante/Assistido que optar pelo Ciclo de Vida autoriza a Entidade a ajustar o seu perfil de acordo com a sua idade e ciclo de vida.</p><p>Na Néos, a mudança do seu Perfil de Investimento é permitida a qualquer tempo, desde que respeitado o intervalo de 6 meses entre elas.</p>';
         } else {
-            g
             profileText = '<p class="profile-text">Seu perfil é</p><p><span style="font-size: 25px; font-weight: bolder; text-decoration: underline; font-family: \'Vonique 43\', sans-serif;">Agressivo:</span><br>Sua composição apresenta uma relação risco x retorno mais arrojada. O foco é a acumulação de capital. Tem 50% de seus recursos alocados em ativos defensivos, tais como: renda fixa, renda fixa no exterior, multimercados com baixa volatilidade. E os 50% restantes alocados em ativos dinâmicos, tais como: FIP, imobiliários, multimercado estruturados, renda variável local e no exterior. Recomendado para aqueles participantes ou assistidos que são tolerantes ao risco e aceitam correr risco em busca de maiores retornos. No Ciclo de Vida, estão enquadradas neste perfil as pessoas até 50 anos de idade.</p><p>A Néos também oferece o perfil de Ciclo de Vida, composto pelos perfis Super Conservador, Conservador, Moderado e Agressivo. Nesta opção, a mudança do perfil fica condicionada a Fase de vida do participante, ou seja, conforme a idade do participante será definido o perfil de investimentos mais adequado de acordo com o ciclo de vida. Cabe ressaltar que o Participante/Assistido que optar pelo Ciclo de Vida autoriza a Entidade a ajustar o seu perfil de acordo com a sua idade e ciclo de vida.</p><p>Na Néos, a mudança do seu Perfil de Investimento é permitida a qualquer tempo, desde que respeitado o intervalo de 6 meses entre elas.</p>';
         }
+        btnReturn.classList.remove('d-none');
+        btnNext.classList.add('d-none');
+        btnPrevious.classList.add('d-none');
+
         return profileText;
     }
-
-
-
 
     // Perguntas e respostas
     const data = {
