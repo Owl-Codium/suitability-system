@@ -89,20 +89,24 @@ document.addEventListener("DOMContentLoaded", function () {
             if (selectedAnswerButtons.length > 0) {
                 const points = parseInt(selectedAnswerButtons[0].getAttribute('data-points'));
                 selectedAnswerPoints[currentQuestionIndex] = points;
-                goToNextQuestion();
 
                 if (currentQuestionIndex === questions.length - 1) {
-
-                    const totalPoints = selectedAnswerPoints.reduce((acc, points) => acc + points, 0);
-                    const profileText = determineProfile(totalPoints);
-                    answersContainer.innerHTML = '';
-                    questionElement.innerText = '';
-                    questionElement.classList.add('d-none');
-                    womanElement.classList.remove('d-none');
-                    womanAnswer.classList.add('d-none');
-                    resultElement.style.display = 'block';
-                    resultElement.innerHTML = profileText;
-
+                    const allQuestionsAnswered = selectedAnswerPoints.every(points => typeof points === 'number');
+                    if (allQuestionsAnswered) {
+                        const totalPoints = selectedAnswerPoints.reduce((acc, points) => acc + points, 0);
+                        const profileText = determineProfile(totalPoints);
+                        answersContainer.innerHTML = '';
+                        questionElement.innerText = '';
+                        questionElement.classList.add('d-none');
+                        womanElement.classList.remove('d-none');
+                        womanAnswer.classList.add('d-none');
+                        resultElement.style.display = 'block';
+                        resultElement.innerHTML = profileText;
+                    } else {
+                        alert("Por favor, responda todas as perguntas antes de avançar para o resultado.");
+                    }
+                } else {
+                    goToNextQuestion();
                 }
             } else {
                 alert("Por favor, selecione uma resposta antes de avançar.");
