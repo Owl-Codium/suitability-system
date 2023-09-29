@@ -213,11 +213,11 @@ document.addEventListener("DOMContentLoaded", function () {
                 "question": "Quando você pensa em investir seu dinheiro, o que é mais importante para você?",
                 "answers": [
                     {
-                        "answer": "Tranquilidade. Saber que meu dinheiro está rendendo, mesmo que pouco, mas que não tenho perdas.",
+                        "answer": "Tranquilidade. Saber que meu dinheiro está rendendo, mesmo que pouco, mas que não tenho retornos negativos.",
                         "points": 10
                     },
                     {
-                        "answer": "Equilíbrio. Saber que meu dinheiro está investido e os ganhos e perdas estão nivelados no longo prazo.",
+                        "answer": "Equilíbrio. Saber que meu dinheiro está investido e os ganhos e retornos negativos estão nivelados no longo prazo.",
                         "points": 30
                     },
                     {
@@ -228,25 +228,25 @@ document.addEventListener("DOMContentLoaded", function () {
             },
             {
                 "id": 4,
-                "question": "Qual a alternativa melhor descreve o seu comportamento em relação ao risco de perda na sua aposentadoria?",
+                "question": "Qual a alternativa melhor descreve o seu comportamento em relação ao risco de retornos negativos na sua aposentadoria?",
                 "answers": [
                     {
-                        "answer": "Não quero perdas, mesmo que ocasionais, e aceito que minha rentabilidade poderá ser menor.",
+                        "answer": "Não quero retornos negativos, mesmo que ocasionais, e aceito que minha rentabilidade poderá ser menor.",
                         "points": 10
                     },
                     {
-                        "answer": "Posso aceitar perdas ocasionais em busca de retornos maiores no médio prazo, desde que sejam pequenas parcelas do total.",
+                        "answer": "Posso aceitar retornos negativos ocasionais em busca de retornos maiores no médio prazo, desde que sejam pequenas parcelas do total.",
                         "points": 30
                     },
                     {
-                        "answer": "Posso aceitar perdas ocasionais em busca de retornos muito elevados no longo prazo, mesmo que eventualmente implique em perdas significativas do total investido.",
+                        "answer": "Posso aceitar retornos negativos ocasionais em busca de retornos muito elevados no longo prazo, mesmo que eventualmente implique em perdas significativas do total investido.",
                         "points": 50
                     }
                 ]
             },
             {
                 "id": 5,
-                "question": "Como você reagiria se os seus investimentos apresentassem perda (mesmo que temporariamente)?",
+                "question": "Como você reagiria se os seus investimentos apresentassem retornos negativos (mesmo que temporariamente)?",
                 "answers": [
                     {
                         "answer": "Não sei responder essa questão.",
