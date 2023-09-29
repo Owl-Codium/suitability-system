@@ -22,11 +22,6 @@ body {
     height: auto;
 }
 
-#img-woman {
-    max-width: 30%;
-    height: auto;
-}
-
 #loader {
     position: fixed;
     display: none;
@@ -705,6 +700,11 @@ No media query for `xs` since this is the default in Bootstrap */
     }
 
     .img-woman {
+        max-width: 45%;
+        height: auto;
+    }
+
+    #img-woman {
         max-width: 45%;
         height: auto;
     }
