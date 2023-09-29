@@ -40,7 +40,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 15px 30px;
+    padding: 15px 20px;
     background-color: #dfdcdc;
     border: none;
     border-radius: 50px;
@@ -51,7 +51,7 @@ body {
 .btn-action button {
     background: none;
     border: none;
-    font-size: 20px;
+    font-size: 18px;
     color: #527c33;
     text-decoration: none;
     text-transform: uppercase;
