@@ -22,6 +22,11 @@ body {
     height: auto;
 }
 
+#img-woman {
+    max-width: 30%;
+    height: auto;
+}
+
 #loader {
     position: fixed;
     display: none;
@@ -167,7 +172,8 @@ body {
 
 /* Estilo para o botão redondo quando a resposta está selecionada */
 .answer.selected::before {
-    background-color: #000;
+    background-color: #527c33;
+    border:2px solid #fff
     /* Cor de fundo preta */
 }
 
