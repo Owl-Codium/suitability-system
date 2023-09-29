@@ -167,7 +167,9 @@ body {
 
 /* Estilo para o botão redondo quando a resposta está selecionada */
 .answer.selected::before {
-    background-color: #000;
+    background-color: #527c33;
+    border:2px solid #fff
+    /* Cor de fundo preta */
 }
 
 .answer {
@@ -617,6 +619,8 @@ body {
 /* X-Small devices (portrait phones, less than 576px)
 No media query for `xs` since this is the default in Bootstrap */
 
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {}
 
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
@@ -677,16 +681,6 @@ No media query for `xs` since this is the default in Bootstrap */
         margin-right: 10px;
     }
 
-    #btn-next {
-        padding: 6px 12px;
-        font-size: 10px;
-    }
-
-    #btn-previous {
-        padding: 6px 12px;
-        font-size: 10px;
-    }
-
     #question {
         font-size: 18px;
     }
@@ -705,7 +699,7 @@ No media query for `xs` since this is the default in Bootstrap */
         margin-bottom: 40px;
     }
 
-    .img-woman-response {
+    .img-woman {
         max-width: 45%;
         height: auto;
     }
